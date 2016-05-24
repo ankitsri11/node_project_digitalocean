@@ -1,14 +1,18 @@
-# node_project_digitalocean
+SnapCI sample nodejs project deployment to DigitalOcean:
 
-      apt-get git-core
-    4  apt-get install git-core
-    5  apt-get install node
-    6  apt-get install nodejs-legacy
-    7  git clone https://github.com/ankitsri11/node_project_digitalocean.git
-    8  ll
-    9  cd node_project_digitalocean/
-   10  ./hello.js 
-   11  ps -ef | grep hell
-   12  nohup node hello.js &
-   13  ps -ef | grep hell
-   14  curl http://localhost:8080
+Prerequisites:
+
+On DigitalOcean droplet-
+apt-get install node
+apt-get install nodejs-legacy
+apt-get update
+apt-get install npm
+npm install -g pm2
+
+Commands to be run on SnapCI -
+chmod +x ./hello.js
+nohup node hello.js &
+sleep 20
+curl http://localhost:8080
+scp hello.js deploy_user@droplet_ip:/home/deploy_user/node_project/
+ssh deploy_user@droplet_ip 'pm2 start /home/deploy_user/node_project/hello.js'
