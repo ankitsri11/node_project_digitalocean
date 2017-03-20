@@ -1,3 +1,6 @@
+#testing
+#testing2
+
 SnapCI sample nodejs project deployment to DigitalOcean:
 
 Prerequisites:
