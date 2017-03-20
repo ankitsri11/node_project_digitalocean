@@ -1,4 +1,3 @@
-#testing
 
 
 SnapCI sample nodejs project deployment to DigitalOcean:
